@@ -46,7 +46,7 @@ Source: http://www.vim.org/scripts/script.php?script_id=3912
 
 ### EasyMotion
 Déplacement rapide via \\w<br/>
-Source: https://github.com/Lokaltog/vim-easymotion
+Source: https://github.com/Lokaltog/vim-easymotion<br/>
 Screencast: http://net.tutsplus.com/tutorials/other/vim-essential-plugin-easymotion/
 
 ### Surround
