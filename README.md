@@ -44,6 +44,16 @@ Article: http://vim.runpaint.org/editing/managing-sessions/
 Commente et décommente des blocs en mode Visual (q)<br/>
 Source: http://www.vim.org/scripts/script.php?script_id=3912
 
+### EasyMotion
+Déplacement rapide via \\w<br/>
+Source: https://github.com/Lokaltog/vim-easymotion
+Screencast: http://net.tutsplus.com/tutorials/other/vim-essential-plugin-easymotion/
+
+### Surround
+Génère des tags autour d'une sélection.<br/>
+Source: http://github.com/tpope/vim-surround<br/>
+Screencast: http://net.tutsplus.com/tutorials/other/vim-essential-plugin-surround/
+
 
 3) Syntax
 ---------
