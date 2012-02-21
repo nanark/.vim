@@ -1,15 +1,16 @@
 " Incompatible vi
 set nocompatible
 
+" Affichage des # de lignes
 set nu
 
-" Le backspace
+" Configuration du backspace
 set backspace=indent,eol,start
 
-" un historique raisonnable
+" Un historique raisonnable
 set history=100
 
-" undo, pour revenir en arrière
+" Undo, pour revenir en arrière
 set undolevels=150
 
 " Fichier relu automatiquement quand il est modifie en dehors de vim
@@ -31,14 +32,18 @@ set ruler
 " Désactiver le wrapping
 set nowrap
 
+" Accélère théoriquement l'affichage
 set ttyfast
 
 " Auto et smart indentation
 set ai
 set si
  
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+" Display incomplete commands
+set showcmd		
+
+" Recherche incrémentielle
+set incsearch
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -107,9 +112,7 @@ noremap <F3> :set hlsearch!<CR>
 au BufRead,BufNewFile *.less set filetype=less
 au BufRead,BufNewFile *.twig set filetype=htmljinja
 
-
 " Navigation entre les tabs
-" CTRL H/L
 :nmap <C-k> :tabprevious<CR>
 :nmap <C-l> :tabnext<CR>
 :map <C-k> :tabprevious<CR>
@@ -121,6 +124,7 @@ au BufRead,BufNewFile *.twig set filetype=htmljinja
 map <F2> :NERDTreeToggle<CR>
 map <C-P> :MRU<CR>
 
+" Active les 256 couleurs si possible
 set t_Co=256
 
 " Gestion de la tabulation
@@ -128,10 +132,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" Theme
 colorscheme desert256
 
 " Gestion des sessions
-" source -S ~/.vim/Session.vim
 nmap §§ <ESC>:mksession! ~/Session.vim<CR>:wqa<CR>
 function! RestoreSession()
 	if argc() == 0 "vim called without arguments
