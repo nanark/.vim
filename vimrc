@@ -123,6 +123,8 @@ au BufRead,BufNewFile *.twig set filetype=htmljinja
 :imap <C-t> <Esc>:tabnew<CR>
 map <F2> :NERDTreeToggle<CR>
 map <C-P> :MRU<CR>
+:nmap \h :set syntax=htmljinja<CR>
+:nmap \j :set syntax=jinja<CR>
 
 " Active les 256 couleurs si possible
 set t_Co=256
