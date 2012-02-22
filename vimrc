@@ -110,7 +110,7 @@ noremap <F3> :set hlsearch!<CR>
 
 " Gestion des fichiers LESS et Twig (fichiers de syntaxe dans .vim/plugin)
 au BufRead,BufNewFile *.less set filetype=less
-au BufRead,BufNewFile *.twig set filetype=htmljinja
+au BufRead,BufNewFile *.twig set filetype=html
 
 " Navigation entre les tabs
 :nmap <C-k> :tabprevious<CR>
@@ -122,8 +122,9 @@ au BufRead,BufNewFile *.twig set filetype=htmljinja
 :nmap <C-t> :tabnew<CR>
 :imap <C-t> <Esc>:tabnew<CR>
 map <F2> :NERDTreeToggle<CR>
+map \<F2> :NERDTreeFocus<CR>
 map <C-P> :MRU<CR>
-:nmap \h :set syntax=htmljinja<CR>
+:nmap \h :set syntax=html<CR>
 :nmap \j :set syntax=jinja<CR>
 
 " Active les 256 couleurs si possible
@@ -138,11 +139,17 @@ set softtabstop=4
 colorscheme desert256
 
 " Gestion des sessions
-nmap §§ <ESC>:mksession! ~/Session.vim<CR>:wqa<CR>
+nmap §§ <ESC>:NERDTreeClose<CR>:mksession! ~/Session.vim<CR>:wqa<CR>
 function! RestoreSession()
 	if argc() == 0 "vim called without arguments
 		execute 'source ~/Session.vim'
 	end
 endfunction
 autocmd VimEnter * call RestoreSession()
-	
+
+augroup BgHighlight
+	autocmd!
+	autocmd WinEnter * set number
+	autocmd WinLeave * set nonumber
+augroup END
+doautocmd BgHighlight WinEnter

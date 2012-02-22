@@ -256,6 +256,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>X("FoldColumn", "d2b48c", "4d4d4d", "")
     call <SID>X("IncSearch", "708090", "f0e68c", "")
     "LineNr
+    "call <SID>X("LineNr", "afd700", "ffffff", "")
+    call <SID>X("LineNr", "485800", "afd700", "")
     call <SID>X("ModeMsg", "daa520", "", "")
     call <SID>X("MoreMsg", "2e8b57", "", "")
     call <SID>X("NonText", "addbe7", "303030", "bold")
@@ -333,6 +335,8 @@ else
     hi Underlined    cterm=underline ctermfg=5
     hi Ignore        ctermfg=darkgrey
     hi Error         cterm=bold ctermfg=7 ctermbg=1
+	hi LineNr		 ctermfg=black  ctermbg=green
 endif
+
 
 " vim: set fdl=0 fdm=marker:
