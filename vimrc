@@ -147,7 +147,7 @@ function! RestoreSession()
 endfunction
 autocmd VimEnter * call RestoreSession()
 
-if has("multi_bytes")
+if has("multi_byte")
 	set encoding=utf-8
 	setglobal fileencoding=utf-8
 	set bomb
