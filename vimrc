@@ -139,7 +139,7 @@ set softtabstop=4
 colorscheme desert256
 
 " Gestion des sessions
-nmap `` <ESC>:NERDTreeClose<CR>:mksession! ~/Session.vim<CR>:wqa<CR>
+nmap §§ <ESC>:NERDTreeClose<CR>:mksession! ~/Session.vim<CR>:wqa<CR>
 function! RestoreSession()
 	if argc() == 0 "vim called without arguments
 		execute 'source ~/Session.vim'
@@ -147,15 +147,15 @@ function! RestoreSession()
 endfunction
 autocmd VimEnter * call RestoreSession()
 
-if has("multi_byte")
-	set encoding=utf-8
-	setglobal fileencoding=utf-8
-	set bomb
-	set termencoding=iso-8859-15
-	set fileencodings=ucs-bom,iso-8859-15,iso-8859-3,utf-8
-else
-	echoerr "Sorry, this version of vim was not compiled with multibytes"
-endif
+"if has("multi_byte")
+"	set encoding=utf-8
+"	setglobal fileencoding=utf-8
+"	set bomb
+"	set termencoding=iso-8859-15
+"	set fileencodings=ucs-bom,iso-8859-15,iso-8859-3,utf-8
+"else
+"	echoerr "Sorry, this version of vim was not compiled with multibytes"
+"endif
 
 augroup BgHighlight
 	autocmd!
