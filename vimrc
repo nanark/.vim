@@ -1,165 +1,123 @@
-" Incompatible vi
-set nocompatible
+" Compatibility
 
-" Affichage des # de lignes
-set nu
+	set nocompatible								" must be first line
+	set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
+	set backspace=indent,eol,start					" backspace configuration
+	set ttyfast
+    if !has('win32') && !has('win64')
+        set term=$TERM								" Make arrow and other keys work
+		set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+    endif
 
-" Configuration du backspace
-set backspace=indent,eol,start
+" Basics
 
-" Un historique raisonnable
-set history=100
+	
+	call pathogen#infect()		" Pathogen to ease plugin support
+	scriptencoding utf-8		" utf8-encoding
+	if has('mouse')				" Mouse support when available
+	  set mouse=a
+	endif
 
-" Undo, pour revenir en arrière
-set undolevels=150
+" Backups
 
-" Fichier relu automatiquement quand il est modifie en dehors de vim
-set autoread
+	set backup					" backup activation
+	set undofile				" keep persistent undo
+	set history=1000
+	set undolevels=1000
+	set undoreload=10000		"maximum number lines to save for undo on a buffer reload
 
-" Quand une fermeture de parenthèse est entrée par l'utilisateur,
-" l'éditeur saute rapidement vers l'ouverture pour montrer où se
-" trouve l'autre parenthèse. Cette fonction active aussi un petit
-" beep quand une erreur se trouve dans la syntaxe.
-set showmatch
-set matchtime=2
+" Display
 
-" Afficher la barre d'état
-set laststatus=2
+	colorscheme desert256
+	filetype plugin indent on  	" automatically detect file types
+	syntax on					" syntax hilite
+	set nu						" display line number
+	set virtualedit=onemore		" allow for cursor beyond last character
+	set background=dark			" assume a dark background
+	set autoread				" autorefresh file after an external modification
+	set cursorline				" underline current line
+	set tabpagemax=15			" only show 15 tabs
+	set t_Co=256
 
-" Affiche la position du curseur
-set ruler
+" Code edition
 
-" Désactiver le wrapping
-set nowrap
+	set nowrap					" nowrap
+	set showmatch				" indicate matching bracket
+	set matchtime=2				" duration of matching signal
+	set ai						" auto-indentation
+	set si						" smart-indentation
+	set tabstop=4				" tab indent 
+	set shiftwidth=4
+	set softtabstop=4
 
-" Accélère théoriquement l'affichage
-set ttyfast
+" Search
 
-" Auto et smart indentation
-set ai
-set si
- 
-" Display incomplete commands
-set showcmd		
+	set incsearch				" incremential search
+	set ignorecase				" ignore case during search
+	set smartcase				" ingore case until first cap
+	set hlsearch				" hilite search
 
-" Recherche incrémentielle
-set incsearch
+" Status bar
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
+	set laststatus=2			" display status bar
+	set showcmd					" diplay incomplete actions		
+	set ruler					" display cursor position
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
-" so that you can undo CTRL-U after inserting a line break.
-inoremap <C-U> <C-G>u<C-U>
+" Filetype
 
-" Ignore la casse dans la recheche... sauf si on tape une majuscule 
-set  ignorecase
-set  smartcase
+	au BufRead,BufNewFile *.less set filetype=less
+	au BufRead,BufNewFile *.twig set filetype=htmljinja
 
-" Met en valeur la ligne du curseur 
-set cursorline
+" Restore cursor position
 
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
+	autocmd BufReadPost *
+	  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+	  \   exe "normal! g`\"" |
+	  \ endif
+	autocmd BufReadPost COMMIT_EDITMSG
+	  \ exe "normal! gg"
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+" Remap
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
+	set pastetoggle=<F12>		" pastetoggle (sane indentation on pastes)         	
+	let mapleader = ','			" new leader key instead of \ 
+	noremap <F3> :set hlsearch!<CR>
+								" deactivate hl after search
+	map <C-k> :tabprevious<CR>
+	map <C-l> :tabnext<CR>
+	map <C-t> :tabnew<CR>
+	nmap <leader>h :set syntax=htmljinja<CR>
+	nmap <leader>j :set syntax=jinja<CR>
 
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
+" Plugins
 
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-  augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
-endif " has("autocmd")
-
-" Active/Desactive le hilite de la recherche en pressant sur F3
-noremap <F3> :set hlsearch!<CR>
-
-" Gestion des fichiers LESS et Twig (fichiers de syntaxe dans .vim/plugin)
-au BufRead,BufNewFile *.less set filetype=less
-au BufRead,BufNewFile *.twig set filetype=html
-
-" Navigation entre les tabs
-:nmap <C-k> :tabprevious<CR>
-:nmap <C-l> :tabnext<CR>
-:map <C-k> :tabprevious<CR>
-:map <C-l> :tabnext<CR>
-:imap <C-k> <Esc>:tabprevious<CR>i
-:imap <C-l> <Esc>:tabnext<CR>i
-:nmap <C-t> :tabnew<CR>
-:imap <C-t> <Esc>:tabnew<CR>
-map <F2> :NERDTreeToggle<CR>
-map \<F2> :NERDTreeFocus<CR>
-map <C-P> :MRU<CR>
-:nmap \h :set syntax=html<CR>
-:nmap \j :set syntax=jinja<CR>
-
-" Active les 256 couleurs si possible
-set t_Co=256
-
-" Gestion de la tabulation
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-
-" Theme
-colorscheme desert256
-
+	" NERDTree
+	map <F2> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+								" open and close nerdframe
+	let NERDTreeShowBookmarks=1
+	let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
+	let NERDTreeChDirMode=0
+	let NERDTreeQuitOnOpen=1
+	let NERDTreeShowHidden=1
+	let NERDTreeKeepTreeInNewTab=1
+			
+	" MRU
+	let g:ctrlp_map = '<C-f>'
+	map <C-p> :CtrlPMRU<CR>
 " Gestion des sessions
-nmap §§ <ESC>:NERDTreeClose<CR>:mksession! ~/Session.vim<CR>:wqa<CR>
-function! RestoreSession()
-	if argc() == 0 "vim called without arguments
-		execute 'source ~/Session.vim'
-	end
-endfunction
-autocmd VimEnter * call RestoreSession()
+"nmap §§ <ESC>:NERDTreeClose<CR>:mksession! ~/Session.vim<CR>:wqa<CR>
+"function! RestoreSession()
+"	if argc() == 0 "vim called without arguments
+"		execute 'source ~/Session.vim'
+"	end
+"endfunction
+"autocmd VimEnter * call RestoreSession()
+"augroup BgHighlight
+"	autocmd!
+"	autocmd WinEnter * set number
+"	autocmd WinLeave * set nonumber
+"augroup END
+"doautocmd BgHighlight WinEnter
 
-"if has("multi_byte")
-"	set encoding=utf-8
-"	setglobal fileencoding=utf-8
-"	set bomb
-"	set termencoding=iso-8859-15
-"	set fileencodings=ucs-bom,iso-8859-15,iso-8859-3,utf-8
-"else
-"	echoerr "Sorry, this version of vim was not compiled with multibytes"
-"endif
 
-augroup BgHighlight
-	autocmd!
-	autocmd WinEnter * set number
-	autocmd WinLeave * set nonumber
-augroup END
-doautocmd BgHighlight WinEnter
+
