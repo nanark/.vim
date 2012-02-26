@@ -49,6 +49,7 @@
 	set tabstop=4				" tab indent 
 	set shiftwidth=4
 	set softtabstop=4
+	set scrolloff=5 			" minimum lines to keep above and below cursor
 
 " Search
 
@@ -92,7 +93,7 @@
 								" search in last opened files
 
 	" vim-session
-	if argc() == 0				"vim called without arguments
+	if argc() == 0				" vim called without arguments
 		let g:session_default_to_last=1
 								" open the last session
 		nmap <F10> :NERDTreeClose<CR>:SaveSession<CR>:qall<CR>
@@ -120,13 +121,4 @@
 	nmap <C-t> :tabnew<CR>
 	nmap <leader>h :set syntax=html<CR>
 	nmap <leader>j :set syntax=twig<CR>
-
-"augroup BgHighlight
-"	autocmd!
-"	autocmd WinEnter * set number
-"	autocmd WinLeave * set nonumber
-"augroup END
-"doautocmd BgHighlight WinEnter
-
-
 
