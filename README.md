@@ -5,6 +5,10 @@ README
 1) Installation
 ---------------
 
+Git Clone
+
+	git clone git@github.com:nanark/.vim.git ~/.vim
+
 Récupérer les submodules.
 
 	git submodule init
@@ -62,21 +66,18 @@ Génère des tags autour d'une sélection.<br/>
 Source: http://github.com/tpope/vim-surround<br/>
 Screencast: http://net.tutsplus.com/tutorials/other/vim-essential-plugin-surround/
 
-3) Syntax
----------
+3) Syntaxe
+----------
 
 ### LESS
-LESS<br/>
 Source: https://github.com/groenewege/vim-less
 
-### vim-markdown
-Markdown<br/>
+### Markdown
 Source: https://github.com/tpope/vim-markdown
 
-### vim-twig
-Twig<br/>
+### Twig
 Source: https://github.com/beyondwords/vim-twig
 
-### vim-php
-PHP 5.3<br/>
+### PHP 5.3
 Source: https://github.com/vim-scripts/php.vim--Garvin
+
