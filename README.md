@@ -37,7 +37,7 @@ Décale automatiquement les brackets<br/>
 Source: https://github.com/acustodioo/vim-enter-indent
 
 ### CTRLP
-Recherche dans les répertoires, dans les récemments ouverts
+Recherche dans les répertoires, dans les récemments ouverts<br/>
 Source: https://github.com/kien/ctrlp.vim
 
 ### vim-session
@@ -46,11 +46,11 @@ Source: https://github.com/xolox/vim-session
 
 ### NERDCommenter
 Commente et décommente des blocs<br/>
-Source: https://github.com/scrooloose/nerdcommenter.git
+Source: https://github.com/scrooloose/nerdcommenter
 
 ### EasyMotion
 Déplacement rapide via <leader><leader>w<br/>
-Source: https://github.com/Lokaltog/vim-easymotion
+Source: https://github.com/Lokaltog/vim-easymotion<br/>
 Screencast: http://net.tutsplus.com/tutorials/other/vim-essential-plugin-easymotion/
 
 ### Surround

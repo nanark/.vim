@@ -19,7 +19,9 @@
 
 " Backups
 
-	set backup					" backup activation
+	set nobackup				" backup activation
+	set nowb
+	set noswapfile
 	set undofile				" keep persistent undo
 	set history=1000
 	set undolevels=1000
@@ -76,18 +78,6 @@
 	autocmd BufReadPost COMMIT_EDITMSG
 	  \ exe "normal! gg"
 
-" Remap
-
-	set pastetoggle=<F12>		" pastetoggle (sane indentation on pastes)         	
-	let mapleader = ','			" new leader key instead of \ 
-	noremap <F3> :set hlsearch!<CR>
-								" deactivate hl after search
-	map <C-k> :tabprevious<CR>
-	map <C-l> :tabnext<CR>
-	map <C-t> :tabnew<CR>
-	nmap <leader>h :set syntax=htmljinja<CR>
-	nmap <leader>j :set syntax=jinja<CR>
-
 " Plugins
 
 	" NERDTree
@@ -100,9 +90,10 @@
 	let NERDTreeShowHidden=1
 	let NERDTreeKeepTreeInNewTab=1
 			
-	" MRU
+	" CTRL-P
 	let g:ctrlp_map = '<C-f>'	" search in files
-	map <C-p> :CtrlPMRU<CR>		" search in last opened files
+	map <C-p> :CtrlPMRU<CR>
+								" search in last opened files
 
 	" vim-session
 	if argc() == 0				"vim called without arguments
@@ -115,6 +106,18 @@
 	end
 	set sessionoptions-=help	" help windows won't be restored
 	
+" Remap
+
+	set pastetoggle=<F12>		" pastetoggle (sane indentation on pastes)         	
+	let mapleader = ','			" new leader key instead of \ 
+	noremap <F3> :set hlsearch!<CR>
+								" deactivate hl after search
+	map <C-k> :tabprevious<CR>
+	map <C-l> :tabnext<CR>
+	nmap <C-t> :tabnew<CR>
+	nmap <leader>h :set syntax=htmljinja<CR>
+	nmap <leader>j :set syntax=jinja<CR>
+
 "augroup BgHighlight
 "	autocmd!
 "	autocmd WinEnter * set number
