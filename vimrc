@@ -14,7 +14,7 @@
 	call pathogen#infect()		" Pathogen to ease plugin support
 	scriptencoding utf-8		" utf8-encoding
 	if has('mouse')				" Mouse support when available
-	  set mouse=a
+		set mouse=a
 	endif
 
 " Backups
@@ -29,7 +29,8 @@
 
 " Display
 
-	colorscheme desert256
+	colorscheme solarized
+	let g:solarized_termcolors=256
 	filetype plugin indent on  	" automatically detect file types
 	syntax on					" syntax hilite
 	set nu						" display line number
@@ -105,8 +106,15 @@
 		let g:session_autosave=0
 	end
 	set sessionoptions-=help	" help windows won't be restored
+
+	" neocomplcache
 	
-" Remap
+	let g:acp_enableAtStartup = 0
+								" Disable AutoComplPop
+	let g:neocomplcache_enable_at_startup = 1
+								" Activate plugin
+	
+" Remap keys
 
 	set pastetoggle=<F12>		" pastetoggle (sane indentation on pastes)         	
 	let mapleader = ','			" new leader key instead of \ 
