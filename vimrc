@@ -22,10 +22,8 @@
 	set nobackup				" backup activation
 	set nowb
 	set noswapfile
-	set undofile				" keep persistent undo
 	set history=1000
 	set undolevels=1000
-	set undoreload=10000		"maximum number lines to save for undo on a buffer reload
 
 " Display
 
