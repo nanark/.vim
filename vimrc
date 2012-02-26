@@ -67,9 +67,6 @@
 
 " Filetype
 
-	au BufRead,BufNewFile *.less set filetype=less
-	au BufRead,BufNewFile *.twig set filetype=htmljinja
-
 " Restore cursor position
 
 	autocmd BufReadPost *
@@ -123,8 +120,8 @@
 	map <C-k> :tabprevious<CR>
 	map <C-l> :tabnext<CR>
 	nmap <C-t> :tabnew<CR>
-	nmap <leader>h :set syntax=htmljinja<CR>
-	nmap <leader>j :set syntax=jinja<CR>
+	nmap <leader>h :set syntax=html<CR>
+	nmap <leader>j :set syntax=twig<CR>
 
 "augroup BgHighlight
 "	autocmd!

@@ -31,3 +31,15 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "bundle/vim-twig"]
+	path = bundle/vim-twig
+	url = https://github.com/beyondwords/vim-twig.git
+[submodule "bundle/vim-less"]
+	path = bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown
+[submodule "bundle/vim-php"]
+	path = bundle/vim-php
+	url = https://github.com/vim-scripts/php.vim--Garvin.git

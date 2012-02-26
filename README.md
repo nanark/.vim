@@ -23,8 +23,8 @@ Gestionnaire de fichiers.<br/>
 Source: https://github.com/scrooloose/nerdtree<br/>
 Screencast : http://net.tutsplus.com/tutorials/other/vim-essential-plugin-nerdtree/
 
-### AutoClose.vim 2.0
-Ferme automatiquement les ( ) {  } [  ] "" et ''<br/>
+### AutoClose.vim
+Ferme automatiquement les ( ) {  } ...<br/>
 Source: https://github.com/Townk/vim-autoclose<br/>
 URL: http://townk.github.com/vim-autoclose/
 
@@ -35,6 +35,10 @@ Source: https://github.com/Lokaltog/vim-powerline.git
 ### vim-Enter-Indent
 Décale automatiquement les brackets<br/>
 Source: https://github.com/acustodioo/vim-enter-indent
+
+### Rainbow Parentheses
+Couleurs d'association pour les parenthèses<br/>
+Source: https://github.com/kien/rainbow_parentheses.vim
 
 ### CTRLP
 Recherche dans les répertoires, dans les récemments ouverts<br/>
@@ -58,9 +62,21 @@ Génère des tags autour d'une sélection.<br/>
 Source: http://github.com/tpope/vim-surround<br/>
 Screencast: http://net.tutsplus.com/tutorials/other/vim-essential-plugin-surround/
 
-
 3) Syntax
 ---------
 
 ### LESS
-### Jinja (Twig)
+LESS<br/>
+Source: https://github.com/groenewege/vim-less
+
+### vim-markdown
+Markdown<br/>
+Source: https://github.com/tpope/vim-markdown
+
+### vim-twig
+Twig<br/>
+Source: https://github.com/beyondwords/vim-twig
+
+### vim-php
+PHP 5.3<br/>
+Source: https://github.com/vim-scripts/php.vim--Garvin
