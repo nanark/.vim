@@ -5,11 +5,15 @@ README
 1) Installation
 ---------------
 
+Récupérer les submodules.
+
+	git submodule init
+	git submodule update
+
 Placer le répertoire .vim dans ~/. Créer un symlink pour le .vimrc.
 
 	cd ~/
 	ln -s .vim/vimrc .vimrc
-
 
 2) Plugins
 ----------
@@ -21,32 +25,32 @@ Screencast : http://net.tutsplus.com/tutorials/other/vim-essential-plugin-nerdtr
 
 ### AutoClose.vim 2.0
 Ferme automatiquement les ( ) {  } [  ] "" et ''<br/>
-URL: http://thiagoalves.com.br<br/>
+Source: https://github.com/Townk/vim-autoclose<br/>
+URL: http://townk.github.com/vim-autoclose/
 
 ### Powerline
 Enhancer de la barre de statut.<br/>
 Source: https://github.com/Lokaltog/vim-powerline.git
 
-### EnterIndent 0.0.2
+### vim-Enter-Indent
 Décale automatiquement les brackets<br/>
-Source: http://www.vim.org/scripts/script.php?script_id=3575
+Source: https://github.com/acustodioo/vim-enter-indent
 
-### MRU 3.3
-Historique des derniers fichiers ouverts<br/>
-Source: http://www.vim.org/scripts/script.php?script_id=521
+### CTRLP
+Recherche dans les répertoires, dans les récemments ouverts
+Source: https://github.com/kien/ctrlp.vim
 
-### SessionMan 1.5
+### vim-session
 Gestionnaire de session (fichiers ouverts, positions du pwd...)<br/>
-Source: http://www.vim.org/scripts/script.php?script_id=2010<br/>
-Article: http://vim.runpaint.org/editing/managing-sessions/
+Source: https://github.com/xolox/vim-session
 
-### ToggleComment
-Commente et décommente des blocs en mode Visual (q)<br/>
-Source: http://www.vim.org/scripts/script.php?script_id=3912
+### NERDCommenter
+Commente et décommente des blocs<br/>
+Source: https://github.com/scrooloose/nerdcommenter.git
 
 ### EasyMotion
-Déplacement rapide via \\w<br/>
-Source: https://github.com/Lokaltog/vim-easymotion<br/>
+Déplacement rapide via <leader><leader>w<br/>
+Source: https://github.com/Lokaltog/vim-easymotion
 Screencast: http://net.tutsplus.com/tutorials/other/vim-essential-plugin-easymotion/
 
 ### Surround
