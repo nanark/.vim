@@ -222,22 +222,6 @@
 
 	" }
     
-    " Tabularize {
-        if exists(":Tabularize")
-          nmap <Leader>a= :Tabularize /=<CR>
-          vmap <Leader>a= :Tabularize /=<CR>
-          nmap <Leader>a: :Tabularize /:<CR>
-          vmap <Leader>a: :Tabularize /:<CR>
-          nmap <Leader>a:: :Tabularize /:\zs<CR>
-          vmap <Leader>a:: :Tabularize /:\zs<CR>
-          nmap <Leader>a, :Tabularize /,<CR>
-          vmap <Leader>a, :Tabularize /,<CR>
-          nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-          vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-        endif
-     " }
-
-
 	" Richard's plugins {
 		" Fuzzy Finder {
 		" }
@@ -252,31 +236,6 @@
 			nmap <leader>b :BufExplorer<CR>
 		" }
 		
-		" VCS commands {
-			nmap <leader>vs :VCSStatus<CR>
-			nmap <leader>vc :VCSCommit<CR>
-			nmap <leader>vb :VCSBlame<CR>
-			nmap <leader>va :VCSAdd<CR>
-			nmap <leader>vd :VCSVimDiff<CR>
-			nmap <leader>vl :VCSLog<CR>
-			nmap <leader>vu :VCSUpdate<CR>
-		" }
-		" php-doc commands {
-			nmap <leader>pd :call PhpDocSingle()<CR>
-			vmap <leader>pd :call PhpDocRange()<CR>
-		" }
-		
-		" Debugging with VimDebugger {
-			map <F11> :DbgStepInto<CR>
-			map <F10> :DbgStepOver<CR>
-			map <S-F11> :DbgStepOut<CR>
-			map <F5> :DbgRun<CR>
-			map <F6> :DbgDetach<CR>
-			map <F8> :DbgToggleBreakpoint<CR>
-			map <S-F8> :DbgFlushBreakpoints<CR>
-			map <F9> :DbgRefreshWatch<CR>
-			map <S-F9> :DbgAddWatch<CR>
-		" }
 
 		" Taglist Variables {
 			let Tlist_Auto_Highlight_Tag = 1

@@ -10,7 +10,6 @@
     endif
 
 " Basics
-
 	
 	call pathogen#infect()		" Pathogen to ease plugin support
 	scriptencoding utf-8		" utf8-encoding
@@ -102,16 +101,20 @@
 	let NERDTreeKeepTreeInNewTab=1
 			
 	" MRU
-	let g:ctrlp_map = '<C-f>'
-	map <C-p> :CtrlPMRU<CR>
-" Gestion des sessions
-"nmap §§ <ESC>:NERDTreeClose<CR>:mksession! ~/Session.vim<CR>:wqa<CR>
-"function! RestoreSession()
-"	if argc() == 0 "vim called without arguments
-"		execute 'source ~/Session.vim'
-"	end
-"endfunction
-"autocmd VimEnter * call RestoreSession()
+	let g:ctrlp_map = '<C-f>'	" search in files
+	map <C-p> :CtrlPMRU<CR>		" search in last opened files
+
+	" vim-session
+	if argc() == 0				"vim called without arguments
+		let g:session_default_to_last=1
+								" open the last session
+		nmap <F10> :NERDTreeClose<CR>:SaveSession<CR>:qall<CR>
+								" save session and quit
+	else
+		let g:session_autosave=0
+	end
+	set sessionoptions-=help	" help windows won't be restored
+	
 "augroup BgHighlight
 "	autocmd!
 "	autocmd WinEnter * set number
