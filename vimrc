@@ -110,7 +110,16 @@
 	let g:neocomplcache_enable_at_startup = 1
 								" Activate plugin
 	
-" Remap keys
+	" CTRLP
+	set wildignore+=*/.git/*,*/.hg/*,*/.svn/*   " for Linux/MacOSX
+	set wildignore+=.git\*,.hg\*,.svn\*         " for Windows
+	
+	let g:ctrlp_custom_ignore = {
+		\ 'dir':  '\.git$\|\.hg$\|\.svn$',
+		\ 'file': '\.exe$\|\.so$\|\.dll$'
+	\ }
+	
+	" Remap keys
 
 	set pastetoggle=<F12>		" pastetoggle (sane indentation on pastes)         	
 	let mapleader = ','			" new leader key instead of \ 
@@ -121,4 +130,5 @@
 	nmap <C-t> :tabnew<CR>
 	nmap <leader>h :set syntax=html<CR>
 	nmap <leader>j :set syntax=twig<CR>
-
+	nmap <C-c> :close<CR>
+	nmap <C-S-c> :close!<CR>
