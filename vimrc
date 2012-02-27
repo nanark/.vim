@@ -116,7 +116,7 @@
 	
 	let g:ctrlp_custom_ignore = {
 		\ 'dir':  '\.git$\|\.hg$\|\.svn$',
-		\ 'file': '\.exe$\|\.so$\|\.dll$'
+		\ 'file': '\.exe$\|\.so$\|\.dll$\|\.cache$\|\.less\.css$'
 	\ }
 	
 	" Remap keys
