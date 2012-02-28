@@ -27,21 +27,24 @@
 
 " Display
 
-	colorscheme solarized
-	let g:solarized_termcolors=256
 	filetype plugin indent on  	" automatically detect file types
 	syntax on					" syntax hilite
 	set nu						" display line number
 	set virtualedit=onemore		" allow for cursor beyond last character
-	set background=dark			" assume a dark background
 	set autoread				" autorefresh file after an external modification
 	set cursorline				" underline current line
 	set tabpagemax=15			" only show 15 tabs
+	set background=dark			" assume a dark background
 	set t_Co=256
+	let g:solarized_termcolors = 256 
+	let g:solarized_visibility = "high" 
+	let g:solarized_contrast = "high" 
+	colorscheme solarized
 
 " Code edition
 
-	set nowrap					" nowrap
+	let &showbreak = '↳   '
+	set wrap					" wrap
 	set showmatch				" indicate matching bracket
 	set matchtime=2				" duration of matching signal
 	set ai						" auto-indentation
@@ -103,12 +106,6 @@
 	end
 	set sessionoptions-=help	" help windows won't be restored
 
-	" neocomplcache
-	
-	let g:acp_enableAtStartup = 0
-								" Disable AutoComplPop
-	let g:neocomplcache_enable_at_startup = 1
-								" Activate plugin
 	
 	" CTRLP
 	set wildignore+=*/.git/*,*/.hg/*,*/.svn/*   " for Linux/MacOSX
@@ -130,5 +127,6 @@
 	nmap <C-t> :tabnew<CR>
 	nmap <leader>h :set syntax=html<CR>
 	nmap <leader>j :set syntax=twig<CR>
-	nmap <C-c> :close<CR>
-	nmap <C-S-c> :close!<CR>
+	nmap <C-c> :q<CR>
+	nmap <C-S-c> :q!<CR>
+
