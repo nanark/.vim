@@ -43,3 +43,12 @@
 [submodule "bundle/vim-php"]
 	path = bundle/vim-php
 	url = https://github.com/vim-scripts/php.vim--Garvin.git
+[submodule "bundle/closetag"]
+	path = bundle/closetag
+	url = https://github.com/docunext/closetag.vim.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/ScrollColors"]
+	path = bundle/ScrollColors
+	url = https://github.com/vim-scripts/ScrollColors.git
