@@ -40,10 +40,6 @@ Source: https://github.com/Lokaltog/vim-powerline.git
 Décale automatiquement les brackets<br/>
 Source: https://github.com/acustodioo/vim-enter-indent
 
-### Rainbow Parentheses
-Couleurs d'association pour les parenthèses<br/>
-Source: https://github.com/kien/rainbow_parentheses.vim
-
 ### CTRLP
 Recherche dans les répertoires, dans les récemments ouverts<br/>
 Source: https://github.com/kien/ctrlp.vim
