@@ -34,12 +34,9 @@
 	set autoread				" autorefresh file after an external modification
 	set cursorline				" underline current line
 	set tabpagemax=15			" only show 15 tabs
-	let g:solarized_termcolors = 256 
-	"let g:solarized_visibility = "high" 
-	"let g:solarized_contrast = "high" 
 	set background=dark			" assume a dark background
 	set t_Co=256
-	colorscheme solarized
+	colorscheme Tomorrow-Night
 
 " Code edition
 

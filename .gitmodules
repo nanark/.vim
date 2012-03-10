@@ -52,3 +52,6 @@
 [submodule "bundle/ScrollColors"]
 	path = bundle/ScrollColors
 	url = https://github.com/vim-scripts/ScrollColors.git
+[submodule "bundle/Vim-Tomorrow-Theme"]
+	path = bundle/Vim-Tomorrow-Theme
+	url = https://github.com/chriskempson/Vim-Tomorrow-Theme.git
