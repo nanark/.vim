@@ -19,9 +19,9 @@
 		set encoding=utf-8                     " better default than latin1
 		setglobal fileencoding=utf-8           " change default file encoding when writing new files
 	endif
-	if has('mouse')				" Mouse support when available
-		set mouse=a
-	endif
+	"if has('mouse')				" Mouse support when available
+		"set mouse=a
+	"endif
 
 " Backups
 
@@ -132,4 +132,7 @@
 	nmap <leader>j :set syntax=twig<CR>
 	nmap <C-c> :q<CR>
 	nmap <C-S-c> :q!<CR>
+
+" Erreur de EOL
+	set fileformats+=dos
 
